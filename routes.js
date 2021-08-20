@@ -10,7 +10,7 @@ const db = mysql.createPool({
     database: 'test'
 })
 
-router.post('/api/register/', (req, res) => {
+router.post('/api/register', (req, res) => {
     const userN = req.body.user;
     const passW = req.body.pass;
     const sql = "INSERT INTO users (username, password) VALUES (?,?)";
@@ -21,7 +21,7 @@ router.post('/api/register/', (req, res) => {
     });
 });
 
-router.post('/api/values/', (req, res) => {
+router.post('/api/values', (req, res) => {
     const sql = "INSERT INTO users (username, password) VALUES ('lucashello','ma45sd4ye')";
     db.query(sql, (err, result) =>{
         res.send(result);
